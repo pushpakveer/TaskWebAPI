@@ -39,8 +39,7 @@ Before you start, ensure you have the following installed on your system:
 - Click **Restore** to install all required dependencies.
 
 ## 3. Configure Settings (if applicable)
-- Open `appsettings.json` (or `web.config` if applicable).
-- Set up any environment-specific configurations such as database connection strings, API keys, etc.
+- Open `appsettings.json` check for JWT credentials and keys.
 
 ## 4. Build the Project
 - In Visual Studio, click **Build** > **Build Solution** to ensure that the project builds successfully.
