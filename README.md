@@ -85,5 +85,64 @@ In the Swagger UI:
 3. **Test API Endpoints**:
    - After authorization, you can now explore and test the available API endpoints directly from the interface.
 
+## Packages Used
+1. **Microsoft.AspNetCore.Authentication.JwtBearer**  
+   This package is used to implement JWT authentication in the API. It helps secure the API by validating the JWT token in the request header and ensuring that only authorized users can access certain endpoints.
+
+2. **FluentValidation**  
+   FluentValidation is used for input validation of the data passed in API requests. It provides a fluent interface to define validation rules and ensures that the incoming data is valid before it is processed.
+
+## Architecture Pattern
+**Repository Pattern**  
+The Repository Pattern is used to separate the data access logic from the business logic. The API uses repositories to interact with the data layer, ensuring that the business logic is not tightly coupled with data access code. This improves testability, maintainability, and separation of concerns within the application.
+
+## API Endpoints
+
+### 1. **GET /tasks**
+   - Retrieves all tasks.
+
+### 2. **GET /tasks/{id}**
+   - Retrieves a specific task by its ID.
+
+### 3. **POST /tasks**
+   - Creates a new task. Requires a request body with the following properties:
+     - `title` (string)
+     - `description` (string)
+     - `due_date` (date)
+     - `status` (enum: "pending", "in_progress", "completed")
+
+### 4. **PUT /tasks/{id}**
+   - Updates an existing task. Requires a request body with the updated task properties.
+
+### 5. **DELETE /tasks/{id}**
+   - Deletes a task by its ID.
+
+### 6. **PATCH /tasks/{id}/complete**
+   - Marks a task as complete.
+
+## Task Properties
+Each task has the following properties:
+- `id` (unique identifier)
+- `title` (string)
+- `description` (string)
+- `due_date` (date)
+- `status` (enum: "pending", "in_progress", "completed")
+- `created_at` (timestamp)
+- `updated_at` (timestamp)
+
+## Usage
+
+### JWT Authentication
+To access protected endpoints, a valid JWT token must be provided in the `Authorization` header with the format:  
+`Bearer <your_jwt_token_here>`
+
+## Contact
+
+For any doubts or queries, feel free to reach out to me at:
+
+**Email**: pushpakveer19@gmail.com 
+**Phone**: 9158106296
+
+
 
 
