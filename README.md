@@ -49,3 +49,41 @@ Before you start, ensure you have the following installed on your system:
 
 By following these steps, you will have the project set up and ready to run.
 
+# Running the Project
+
+## 1. Set the Startup Project
+- Right-click the solution in **Solution Explorer**.
+- Select **Set Startup Project** and ensure the API project is selected.
+
+## 2. Start the Project
+- Click the **Run** button in Visual Studio (or press **F5**).
+- The project will launch, and Swagger will open in your default browser.
+
+---
+
+This will run the project and provide you with an interface to interact with the API through Swagger.
+
+# Swagger UI
+
+Once the project is running, Swagger UI will be accessible at:
+
+http://localhost:<port>/swagger
+
+Replace `<port>` with the actual port number shown in the Visual Studio Output.
+
+In the Swagger UI:
+
+1. **Authenticate API Call**: 
+   - First, call the authentication API to get the JWT token.
+   - In the request header, use the API key `"ApiKey": "12345-API-KEY-67890"`.
+   
+2. **Authorize Swagger UI**:
+   - After calling the authentication API, you will receive the JWT token.
+   - Go to the Swagger UI, and at the top-right corner, click on the **Authorize** button.
+   - In the authorization dialog, enter `Bearer <JWT Token>` (replace `<JWT Token>` with the actual token received from the authentication API).
+
+3. **Test API Endpoints**:
+   - After authorization, you can now explore and test the available API endpoints directly from the interface.
+
+
+
