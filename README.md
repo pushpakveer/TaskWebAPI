@@ -140,7 +140,7 @@ To access protected endpoints, a valid JWT token must be provided in the `Author
 For any doubts or queries, feel free to reach out to me at:
 
 **Email**: pushpakveer19@gmail.com 
-**Phone**: 9158106296
+
 
 
 
