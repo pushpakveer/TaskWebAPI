@@ -22,7 +22,7 @@ namespace TaskWebAPI.Controllers
 
         // GET: Retrieve all tasks
         [HttpGet("all")]
-        [Authorize]
+        [Authorize(Policy ="User")]
         public ActionResult GetAllTasks()
         {
             try
@@ -44,7 +44,7 @@ namespace TaskWebAPI.Controllers
 
         // GET: Retrieve Task By Id
         [HttpGet("{id}")]
-        [Authorize]
+        [Authorize(Policy = "Admin")]
         public ActionResult GetTaskById(int id)
         {
             try
@@ -66,7 +66,7 @@ namespace TaskWebAPI.Controllers
 
         // POST:Create New Task
         [HttpPost("create")]
-        [Authorize]
+        [Authorize(Policy ="Admin")]
         public ActionResult CreateTask([FromBody]Task task)
         {
             try

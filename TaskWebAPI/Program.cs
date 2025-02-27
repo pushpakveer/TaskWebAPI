@@ -31,6 +31,9 @@ namespace TaskWebAPI
                     };
                 });
 
+            builder.Services.AddAuthorizationBuilder()
+                .AddPolicy("Admin", policy => policy.RequireClaim("Role","Admin"))
+                .AddPolicy("User", policy=>policy.RequireClaim("Role","User"));
             // Add services to the container.
             builder.Services.AddSingleton<IDataRepository, DataRepository>();
 
